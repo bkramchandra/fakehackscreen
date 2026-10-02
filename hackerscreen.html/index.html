@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>System Terminal</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        color: #00ff00;
+        font-family: monospace;
+        padding: 25px;
+        font-size: 17px;
+    }
+
+    #terminal {
+        white-space: pre-wrap;
+        line-height: 1.6;
+    }
+
+    .prank {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #000;
+        color: #00ff00;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .prank h1 {
+        font-size: 55px;
+    }
+
+    .prank p {
+        font-size: 22px;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="terminal"></div>
+
+<div class="prank" id="prank">
+<h1><span style="font-size: 200px;">🖕</span></h1>
+
+    <p>sucessfully hacked</p>
+</div>
+
+<script>
+const lines = [
+    "Initializing secure terminal...",
+    "Connecting to server...",
+    "Connection established.",
+    "Scanning system...",
+    "Checking system files...",
+    "Analyzing network...",
+    "Accessing encrypted database...",
+    "Decrypting data...",
+    "████████████████████ 100%",
+    "System scan completed.",
+    "",
+    "Preparing final report..."
+];
+
+let i = 0;
+const terminal = document.getElementById("terminal");
+
+function typeLine() {
+    if (i < lines.length) {
+        terminal.innerHTML += lines[i] + "\n";
+        i++;
+
+        setTimeout(typeLine, 700);
+    } else {
+        setTimeout(() => {
+            document.getElementById("prank").style.display = "flex";
+        }, 1500);
+    }
+}
+
+typeLine();
+</script>
+
+</body>
+</html>
+```
